@@ -14,7 +14,8 @@ class FullPost extends Component {
           .get("https://jsonplaceholder.typicode.com/posts/" + this.props.id)
           .then(res => {
             this.setState({ loadedPost: res.data });
-          });
+          })
+          .catch(error => console.log(error));
       }
     }
   }
@@ -22,7 +23,8 @@ class FullPost extends Component {
   deletePostHandler = () => {
     axios
       .delete("https://jsonplaceholder.typicode.com/posts/" + this.props.id)
-      .then(res => console.log(res));
+      .then(res => console.log(res))
+      .catch(error => console.log(error));
   };
   render() {
     let post = <p style={{ textAlign: "center" }}>Please select a Post!</p>;
