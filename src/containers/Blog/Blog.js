@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-// import axios from "axios";
-// import Post from "../../components/Post/Post";
-// import FullPost from "./FullPost/FullPost";
-// import NewPost from "./NewPost/NewPost";
+import { Route } from "react-router-dom";
 import Posts from "./Posts/Posts";
+import NewPost from "./NewPost/NewPost";
 import "./Blog.css";
 
 class Blog extends Component {
@@ -22,13 +20,9 @@ class Blog extends Component {
             </ul>
           </nav>
         </header>
-        <Posts />
-        {/* <section>
-          <FullPost id={this.state.selectedPostId} />
-        </section>
-        <section>
-          <NewPost />
-        </section> */}
+        <Route path="/" exact component={Posts} />
+        <Route path="/new-post" exact component={NewPost} />
+        {/* <Posts /> */}
       </div>
     );
   }
